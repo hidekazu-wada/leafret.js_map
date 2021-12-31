@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Style id="LineStyle1">
+  <LineStyle>
+  <color>ff0000ff</color>
+  <width>3</width>
+  </LineStyle>
+</Style>
+<Placemark>
+<styleUrl>#LineStyle1</styleUrl>
+<LineString>
+<coordinates>138.72936106541604,35.36007781934357 138.73007989743203,35.36104028069742 138.7316033921525,35.35984157707582 138.7322149358079,35.36105777988857 138.7335667691514,35.36188898709926 138.73386717656106,35.36298266775992 138.73499370434732,35.36349887988489 138.73506880619973,35.36124152116662 138.73448944905252,35.360349059613434</coordinates>
+</LineString>
+</Placemark>
+</Document>
+</kml>

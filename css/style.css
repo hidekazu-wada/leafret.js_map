@@ -1,0 +1,84 @@
+.pc {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .pc {
+    display: none;
+  }
+}
+
+.sp {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .sp {
+    display: block;
+  }
+}
+
+.tab_sp {
+  display: none;
+}
+
+@media (max-width: 834px) {
+  .tab_sp {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab_sp {
+    display: block;
+  }
+}
+
+.i_cont_ul > li > a {
+  opacity: 1;
+}
+
+.i_cont_ul > li > a.hidde {
+  opacity: .3;
+}
+
+.leaflet-overlay-pane svg g path:nth-of-type(1) {
+  display: block;
+}
+
+.leaflet-overlay-pane svg g path:nth-of-type(1).hidde {
+  display: none;
+}
+
+.leaflet-overlay-pane svg g path:nth-of-type(2) {
+  display: block;
+}
+
+.leaflet-overlay-pane svg g path:nth-of-type(2).hidde {
+  display: none;
+}
+
+.i_toilet {
+  display: none;
+}
+
+.i_toilet.active {
+  display: block;
+}
+
+.i_start {
+  display: none;
+}
+
+.i_start.active {
+  display: block;
+}
+
+.i_goals {
+  display: none;
+}
+
+.i_goals.active {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <title>MapTest</title>
+</head>
+<body>
+    <div id="mapTop" style="width: 100%;height: 600px;"></div>
+    <div style="display: none;" id="hidden-content">
+        <ul class="i_cont_ul">
+            <li><a class="i_root1_cont">ルート1</a></li>
+            <li><a class="i_root2_cont">ルート2</a></li>
+            <li><a class="i_start_cont">アイコン1<img src="img/icon-toilet.svg" alt="" style="width: 2vw"></a></li>
+            <li><a class="i_goals_cont">アイコン2<img src="img/icon-toilet.svg" alt="" style="width: 2vw"></a></li>
+            <li><a class="i_toilet_cont">アイコン3<img src="img/icon-toilet.svg" alt="" style="width: 2vw"></a></li>
+        </ul>
+    </div>
+    <a data-fancybox data-src="#hidden-content" href="javascript:;">
+        表示情報を切り替える
+    </a>
+
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet-omnivore.min.js"></script>
+    <script src="js/leaflet-easyPrint.js"></script>
+    <script src="js/myMap.js"></script>
+</body>
+</html>

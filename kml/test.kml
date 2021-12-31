@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Style id="LineStyle1">
+  <LineStyle>
+  <color>ffff0000</color>
+  <width>3</width>
+  </LineStyle>
+</Style>
+<Placemark>
+<name>ルートテスト</name>
+<description><![CDATA[ <p>ルートのテストです</p> ]]></description>
+<styleUrl>#LineStyle1</styleUrl>
+<LineString>
+<coordinates>138.72856535628674,35.36373455847868 138.73043353745746,35.364631041079136 138.7323539991121,35.36427232277962 138.73358781525897,35.362408711817444 138.7313133020143,35.360947540741975 138.7293606538515,35.361078784733884 138.72779424378678,35.36234746565665 138.72788007447528,35.36425482428521 138.72958595940872,35.365147242664065 138.73098070809647,35.36535722202536</coordinates>
+</LineString>
+</Placemark>
+</Document>
+</kml>

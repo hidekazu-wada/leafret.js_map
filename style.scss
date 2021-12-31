@@ -1,0 +1,106 @@
+//px→vw変換
+$viewport_pc: 2560; // 基準となるビューポート
+
+@function ppx($num_pc, $width_pc: $viewport_pc) {
+    @return (1vw * $num_pc / $width_pc * 100);
+}
+
+$viewport_sp: 720; // 基準となるビューポート
+
+@function spx($num_sp, $width_sp: $viewport_sp) {
+    @return (1vw * $num_sp / $width_sp * 100);
+}
+
+// メディアクエリ設定
+$pc: 1024px; // PC
+$tab: 834px; // タブレット
+$sp: 480px; // スマホ
+
+@mixin pc {
+    @media (max-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+// .pc.sp表示設定
+.pc {
+    display: block;
+
+    @include sp {
+        display: none;
+    }
+}
+
+.sp {
+    display: none;
+
+    @include sp {
+        display: block;
+    }
+}
+
+.tab_sp {
+    display: none;
+
+    @include tab {
+        display: block;
+    }
+
+    @include sp {
+        display: block;
+    }
+}
+
+// マップtest
+.i_cont_ul {
+    >li {
+        >a {
+            opacity: 1;
+            &.hidde {
+                opacity: .3;
+            }
+        }    
+    }
+}
+.leaflet-overlay-pane svg g path:nth-of-type(1) {
+    display: block;
+    &.hidde {
+        display: none;
+    }
+}
+.leaflet-overlay-pane svg g path:nth-of-type(2) {
+    display: block;
+    &.hidde {
+        display: none;
+    }
+}
+.i_toilet {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+.i_start {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+.i_goals {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
