@@ -41,18 +41,30 @@ let toilet= L.icon({
     popupAnchor: [0, -50],
     className: 'i_toilet active'
     });
+let peek= L.icon({
+    iconUrl:'../img/icon-peek.svg',
+    iconSize: [25, 25],
+    iconAnchor: [10, 15],
+    popupAnchor: [0, -50],
+    className: 'i_peek active'
+    });
+let ridge= L.icon({
+    iconUrl:'../img/icon-ridge.svg',
+    iconSize: [25, 25],
+    iconAnchor: [10, 15],
+    popupAnchor: [0, -50],
+    className: 'i_ridge active'
+    });
 
-// ルート1
-let route0= omnivore.kml('../kml/test.kml',null,
+// メインルート
+let mainRoute1= omnivore.kml('../kml/mainRoute.kml',null,
     L.geoJson(null,
     {style: {color: "red", weight: 3, opacity: 1},}))
-    .bindTooltip('<strong>1日目のルート</strong><br><p>桂川PA→ルーピアイン南湖</p><p>所要時間：3時間</p>',{opacity:1})
-    .bindPopup('<strong>1日目のルート</strong><br><p>桂川PA→ルーピアイン南湖</p><p>所要時間：3時間</p>',{autoClose:false});
-mapTop.addLayer(route0);
-let routefr0=L.marker([35.365354,138.730979],{icon:telharuflag}).bindPopup("<p>スタート</p><div><img src=\"/wp-content/uploads/2021/08/steering-2.jpg\"></div><div><a href=\"https://test.fujisan-lt.jp/\">リンクも貼れます</a></div>",{autoClose:false});
-let routeto0=L.marker([35.363721,138.728563],{icon:checkeredflag}).bindPopup("<p>ゴール</p><a data-fancybox=\"gallery\" href=\"/wp-content/uploads/2021/08/steering-2.jpg\" data-caption=\"花\"><img src=\"/wp-content/uploads/2021/08/steering-2.jpg\" width=\"320\" height=\"240\" /></a>",{autoClose:false});
-let routeGP0=L.layerGroup([route0,routefr0,routeto0]);
-mapTop.addLayer(routeGP0);
+    .bindTooltip('<p>メインルートツールチップ</p>',{opacity:1})
+    .bindPopup('<p>メインルートポップアップ</p>',{autoClose:false});
+mapTop.addLayer(mainRoute1);
+let mainRouteGp=L.layerGroup([mainRoute1]);
+mapTop.addLayer(mainRouteGp);
 
 // ルート2
 let route2= omnivore.kml('../kml/test2.kml',null,
@@ -72,12 +84,28 @@ let toilet_3=L.marker([35.361057,138.732214],{icon:toilet}).bindPopup("<p>トイ
 let toiletGP1=L.layerGroup([toilet_1,toilet_2,toilet_3]);
 mapTop.addLayer(toiletGP1);
 
+// ピーク
+let peek_1=L.marker([35.485184,138.866179],{icon:peek}).bindPopup("<ul><li>杓子山</li><li>しゃくしやま</li><li>1597.5m</li><li>19</li><li>山梨百名山</li></ul>",{autoClose:false});
+let peek_2=L.marker([35.487967,138.878399],{icon:peek}).bindPopup("<ul><li>鹿留山</li><li>ししどめやま</li><li>1632.0m</li><li>15</li></ul>",{autoClose:false});
+let peek_3=L.marker([35.468264,138.882616],{icon:peek}).bindPopup("<ul><li>加瀬山</li><li>かせやま</li><li>1275m</li><li>46</li></ul>",{autoClose:false});
+let peekGP=L.layerGroup([peek_1,peek_2,peek_3]);
+mapTop.addLayer(peekGP);
+
+// 峠
+let ridge_1=L.marker([35.480217,138.863922],{icon:ridge}).bindPopup("<ul><li>大権首峠</li><li>おおざすとうげ</li><li>1330m</li></ul>",{autoClose:false});
+let ridge_2=L.marker([35.475535,138.883955],{icon:ridge}).bindPopup("<ul><li>立ノ塚峠</li><li>たちんづかとうげたちんづかとうげ</li><li>1233m</li><li>「内野峠」とも呼ばれる</li></ul>",{autoClose:false});
+let ridge_3=L.marker([35.457043,138.892599],{icon:ridge}).bindPopup("<ul><li>二十曲峠</li><li>にじゅうまがりとうげ</li><li>1150m</li></ul>",{autoClose:false});
+let ridgeGP=L.layerGroup([ridge_1,ridge_2,ridge_3]);
+mapTop.addLayer(ridgeGP);
+
 
 // レイヤーグループ
 let routelayers = {
-    "ルート1":routeGP0,
+    "ルート1":mainRouteGp,
     "ルート2":routeGP2,
-    "トイレ":toiletGP1
+    "トイレ":toiletGP1,
+    "ピーク":peekGP,
+    "峠":ridgeGP,
 };
 // L.control.layers(null,routelayers ).addTo(mapTop);
 L.control.scale().addTo(mapTop);
@@ -112,4 +140,12 @@ jQuery('.i_goals_cont').on('click', function() {
 jQuery('.i_toilet_cont').on('click', function() {
     jQuery(this).toggleClass('hidde');
     jQuery('.i_toilet').toggleClass('active');
+});
+jQuery('.i_peek_cont').on('click', function() {
+    jQuery(this).toggleClass('hidde');
+    jQuery('.i_peek').toggleClass('active');
+});
+jQuery('.i_ridge_cont').on('click', function() {
+    jQuery(this).toggleClass('hidde');
+    jQuery('.i_ridge').toggleClass('active');
 });
