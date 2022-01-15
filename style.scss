@@ -104,3 +104,15 @@ $sp: 480px; // スマホ
         display: block;
     }
 }
+.i_peek {
+    display: none;
+    &.active {
+        display: block;
+    }
+}
+.i_ridge {
+    display: none;
+    &.active {
+        display: block;
+    }
+}

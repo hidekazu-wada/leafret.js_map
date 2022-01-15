@@ -81,4 +81,20 @@
 .i_goals.active {
   display: block;
 }
+
+.i_peek {
+  display: none;
+}
+
+.i_peek.active {
+  display: block;
+}
+
+.i_ridge {
+  display: none;
+}
+
+.i_ridge.active {
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */
